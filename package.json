@@ -1,0 +1,14 @@
+{
+  "name": "namste-react",
+  "version": "1.0.0",
+  "description": "This is react series by Vishwajeet Singh",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vishwajeet Singh",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}
