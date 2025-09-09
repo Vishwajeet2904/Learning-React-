@@ -1,0 +1,132 @@
+// What our project contains first we think and decide on page and copy and then working on it 
+
+// one level of planning of our apps bby doing proper planning
+
+// *HEADER
+//   -logo 
+//   -nav tabs containing links 
+// *BODY
+//   -search
+//   -resturant container
+//   -resturant card
+// *FOOTER
+//   -COPYRIGHT
+//   -LINKS
+//   -adreess
+//   -contact information
+
+
+// const applayout most outer part of the project and what it contain all the other thingd
+
+// what is javascript component at the end it is a function that return a piece of jsx code 
+
+
+
+// > props are the properties that can be passed to a component
+// > they are used to pass data and functionality from parent to child component
+// > in this case, Resturantcard component is receiving restaurant name, logo, rating, and distance as props
+// > react is wrapping inside the object and passing the props to the component
+// > this is how we pass data and functionality between components
+//   and to pass this we use {props.propertyName} in the child component
+// > here, props.propertyName is the name of the property we want to access in the child component
+  
+// ** example
+//   <Resturantcard name="Meghna Foods" logo="https://th.bing.com/th/id/OIP.wn6359RI5W7SXB4Zf8nZIQHaFj?pid=ImgDetMain" rating="4.4 stars" distance="38 minutes"/>
+//   in the above example, Resturantcard component is receiving 3 properties name, logo, rating, and distance
+
+
+
+//   my code is looking like this when we do not use array and take object from real code 
+  import React from "react";
+import ReactDOM from "react-dom/client";
+
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logoContainer">
+        <img
+          className="logo"
+          src="https://th.bing.com/th/id/OIP.wn6359RI5W7SXB4Zf8nZIQHaFj?pid=ImgDetMain"
+          alt="logo"
+        />
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+const Resturantcard = (props) => {
+  return (
+    <div className="res-card">
+      <img
+        className="res-logo"
+        alt="res-logo"
+        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/FOOD_CATALOG/IMAGES/CMS/2024/8/31/1f2bdb1b-dcb0-42ad-a26d-68dc57f5d116_7c7e9d9c-476c-44b1-8096-4ae151af0c2c.jpg"
+      />
+      <h3>{props.restName}</h3>
+      <h4>{props.cuisine}</h4>
+      <h4>{props.rating}</h4>
+      <h4>{props.time}</h4>
+    </div>
+  );
+};
+
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="Search">Search</div>
+      <div className="res container">
+        <Resturantcard
+          restName="Meghna Foods"
+          cuisine="Biryani, North Indian, Asian"
+          rating="4.4 stars"
+          time="38 minutes"
+        />
+        <Resturantcard
+          restName="Pizza Palace"
+          cuisine="Italian, Fast Food"
+          rating="4.2 stars"
+          time="30 minutes"
+        />
+        <Resturantcard
+          restName="Delhi Zaika"
+          cuisine="North Indian, Mughlai"
+          rating="4.5 stars"
+          time="40 minutes"
+        />
+        <Resturantcard
+          restName="Wok Express"
+          cuisine="Chinese, Asian"
+          rating="4.1 stars"
+          time="28 minutes"
+        />
+        <Resturantcard
+          restName="Tandoori Tales"
+          cuisine="Mughlai, Kebabs"
+          rating="4.3 stars"
+          time="35 minutes"
+        />
+      </div>
+    </div>
+  );
+};
+
+const AppLayout = () => {
+  return (
+    <div className="apps">
+      <Header />
+      <Body />
+    </div>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<AppLayout />);
+
